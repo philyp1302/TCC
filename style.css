@@ -1,15 +1,140 @@
 body {
-  background-color: #6b8e5c; /* tom verde similar ao fundo */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333; /* Dark background as in the image */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top to match image */
+  min-height: 100vh;
+  padding-top: 50px; /* Space from the top */
+  box-sizing: border-box;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
+  width: 100%;
+  max-width: 375px; /* Common mobile width */
 }
 
-img {
-  max-width: 80%;
+.logo {
+  width: 150px; /* Adjust as needed */
   height: auto;
-  margin: 20px 0;
+  margin-bottom: 30px;
+}
+
+.login-box {
+  background-color: #6b8e5c; /* Similar green from your original code */
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: calc(100% - 40px); /* Adjust for padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bem-estar-text {
+  width: 90%; /* Adjust as needed */
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #fff; /* White text for labels */
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-group input {
+  width: calc(100% - 30px); /* Adjust for padding */
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.3); /* Translucent white */
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: #fff;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 45px; /* Make space for the eye icon */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #87ceeb; /* Light blue */
+  color: #333;
+}
+
+.primary-btn:hover {
+  background-color: #6aadda;
+}
+
+.google-btn {
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-btn:hover {
+  background-color: #eee;
+}
+
+.forgot-password {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
 }
