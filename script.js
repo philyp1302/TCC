@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   console.log("Página Bem Estar carregada com sucesso!");
 
   const passwordToggle = document.querySelector('.password-toggle');

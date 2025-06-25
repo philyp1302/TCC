@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,11 +9,10 @@
 <body>
   <div class="container">
     <img src="logo.png" alt="Wellness Logo" class="logo">
-
     <div class="login-box">
       <img src="bem.estar.png" alt="Wellness - Log in" class="bem-estar-text">
 
-      <form>
+      <form onsubmit="event.preventDefault(); window.location.href='app.html';">
         <div class="input-group">
           <input type="text" id="usuario" name="usuario" placeholder=" ">
           <label for="usuario">Username</label>
