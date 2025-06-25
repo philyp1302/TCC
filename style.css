@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #333; /* Dark background as in the image */
+  background-color: #333;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align to the top to match image */
+  align-items: flex-start;
   min-height: 100vh;
-  padding-top: 50px; /* Space from the top */
+  padding-top: 50px;
   box-sizing: border-box;
 }
 
@@ -15,20 +15,20 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 375px; /* Common mobile width */
+  max-width: 375px;
 }
 
 .logo {
-  width: 150px; /* Adjust as needed */
+  width: 150px;
   height: auto;
   margin-bottom: 30px;
 }
 
 .login-box {
-  background-color: #6b8e5c; /* Similar green from your original code */
+  background-color: #6b8e5c;
   border-radius: 20px;
   padding: 30px 20px;
-  width: calc(100% - 40px); /* Adjust for padding */
+  width: calc(100% - 40px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@ body {
 }
 
 .bem-estar-text {
-  width: 90%; /* Adjust as needed */
+  width: 90%;
   height: auto;
   margin-bottom: 25px;
 }
@@ -51,16 +51,16 @@ body {
   position: absolute;
   top: 12px;
   left: 15px;
-  color: #fff; /* White text for labels */
+  color: #fff;
   font-size: 16px;
   pointer-events: none;
   transition: all 0.2s ease;
 }
 
 .input-group input {
-  width: calc(100% - 30px); /* Adjust for padding */
+  width: calc(100% - 30px);
   padding: 12px 15px;
-  background-color: rgba(255, 255, 255, 0.3); /* Translucent white */
+  background-color: rgba(255, 255, 255, 0.3);
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -82,7 +82,7 @@ body {
 }
 
 .password-wrapper input {
-  padding-right: 45px; /* Make space for the eye icon */
+  padding-right: 45px;
 }
 
 .password-toggle {
@@ -108,7 +108,7 @@ body {
 }
 
 .primary-btn {
-  background-color: #87ceeb; /* Light blue */
+  background-color: #87ceeb;
   color: #333;
 }
 
@@ -137,4 +137,18 @@ body {
 
 .forgot-password:hover {
   text-decoration: underline;
+}
+
+.feature-icons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feature-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
 }
