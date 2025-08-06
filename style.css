@@ -1,83 +1,185 @@
+/* Login e geral */
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #A3B18A; /* Um fundo esverdeado da sua imagem */
-    color: #344E41;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: white;
+  box-sizing: border-box;
 }
 
 .container {
-    background-color: #588157; /* Um verde mais escuro para o container */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 350px;
-    max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.logo {
-    width: 100px; /* Ajuste conforme necessário */
-    margin-bottom: 20px;
+.logo, .dash-logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.login-box {
+  background-color: #6b8e5c;
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .bem-estar-text {
-    width: 200px; /* Ajuste conforme necessário */
-    margin-bottom: 30px;
-}
-
-h1 {
-    color: #DAD7CD;
-    margin-bottom: 20px;
+  width: 90%;
+  margin-bottom: 25px;
 }
 
 .input-group {
-    margin-bottom: 15px;
-    text-align: left;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #DAD7CD;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.2s ease;
 }
 
-.input-group input[type="text"],
-.input-group input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #4F772D;
-    border-radius: 5px;
-    background-color: #DAD7CD;
-    color: #344E41;
+.input-group input {
+  width: calc(100% - 30px);
+  padding: 12px 15px;
+  background-color: rgba(255,255,255,0.3);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
 }
 
-.login-button, .logout-button {
-    background-color: #3A5A40; /* Um verde escuro para os botões */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
 }
 
-.login-button:hover, .logout-button:hover {
-    background-color: #2F4D32;
+.password-wrapper {
+  position: relative;
 }
 
-.dashboard-container {
-    padding: 50px;
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.dashboard-container p {
-    color: #DAD7CD;
-    font-size: 1.1em;
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.primary-btn {
+  background-color: #87ceeb;
+  color: #ffffff;
+}
+
+.google-btn {
+  background-color: white;
+  color: #ffffff;
+}
+
+.feature-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.feature-icons img {
+  width: 50px;
+  height: 50px;
+}
+
+.forgot-password {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Dashboard */
+.dashboard-body {
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+.metrics-box {
+  background-color: #555;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metrics-text {
+  text-align: left;
+}
+
+.heart-icon {
+  width: 50px;
+}
+
+.dash-section {
+  background-color: #666;
+  margin: 10px 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.promo {
+  margin: 20px 0;
+}
+
+.highlight {
+  background: black;
+  padding: 6px 15px;
+  border-radius: 10px;
+  color: yellow;
+  font-weight: bold;
+}
+
+.plan-box {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.plan-box .yellow {
+  color: yellow;
+  display: block;
+  margin-top: 5px;
+}
+
+.dashboard-footer {
+  font-size: 14px;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
