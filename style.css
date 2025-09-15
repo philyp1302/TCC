@@ -1,27 +1,13 @@
-:root{
-  --bg:#2f2f2f;
-  --card:#ececec;
-  --accent:#4FC3F7;
-  --muted:#bdbdbd;
-  --text:#111;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--card);
-  line-height:1.3;
-}
-
-/* ----------- LOGIN ----------- */
+/* LOGIN PAGE */
 body.login-page {
   background:#2f2f2f;
+  color:white;
   display:flex;
   align-items:center;
   justify-content:center;
   min-height:100vh;
 }
+
 .login-container {
   background:rgba(255,255,255,0.08);
   padding:26px;
@@ -29,37 +15,82 @@ body.login-page {
   max-width:360px;
   width:90%;
   text-align:center;
+  position:relative;
 }
-.bem-logo {max-width:160px;margin-bottom:20px;}
-.title {font-weight:700;color:#4CAF50;margin:0;}
-.subtitle {margin:4px 0 18px;color:#4FC3F7;font-weight:600;}
-.login-form {display:flex;flex-direction:column;gap:14px;text-align:left;}
-.login-form label {font-size:14px;font-weight:600;}
-.login-form input {padding:10px;border:none;border-radius:8px;background:#d6d6d6;}
-.password-wrapper {position:relative;}
-.password-wrapper input {width:100%;padding-right:32px;}
-.toggle-password {position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;}
-.forgot {font-size:13px;color:white;text-decoration:underline;margin-top:-6px;}
-.btn {border-radius:10px;padding:10px;cursor:pointer;margin-top:6px;font-size:15px;text-align:center;border:none;}
-.btn.primary {background:#4FC3F7;color:black;font-weight:700;}
-.btn.secondary {background:black;color:white;font-weight:700;border:1px solid white;}
 
-/* ----------- DASHBOARD ----------- */
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(0,0,0,0.25);}
-.logo{height:42px}
-.stats{display:flex;gap:12px;align-items:center}
-.stat{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);padding:8px;border-radius:8px}
-.stat img{width:20px;height:20px}
-.cora{width:48px;height:48px}
-.container{padding:22px;max-width:420px;margin:18px auto}
-.card{background:rgba(255,255,255,0.06);padding:18px;border-radius:18px;margin-bottom:16px;color:var(--card);display:flex;align-items:center;gap:12px;}
-.card.big{padding:28px;text-align:center}
-.card.small img{width:36px;height:36px}
-.promo{margin:20px auto;text-align:center;background:#000;border-radius:999px;padding:8px 18px;display:inline-block}
-.promo strong{color:var(--accent)}
-.plan{text-align:center;margin:8px 0}
-.plan-box{display:inline-block;background:#000;color:white;padding:18px;border-radius:16px;min-width:160px;box-shadow:0 6px 18px rgba(0,0,0,0.4);}
-.plan-title{opacity:0.7}
-.price{font-size:22px;margin:8px 0}
-.price span{font-weight:700}
-.footer{margin-top:22px;color:var(--muted);text-align:center;font-size:14px}
+.bem-logo {
+  max-width:160px;
+  margin-bottom:20px;
+}
+
+.title {
+  font-weight:700;
+  color:#4CAF50;
+  margin:0;
+}
+.subtitle {
+  margin:4px 0 18px;
+  color:#4FC3F7;
+  font-weight:600;
+}
+
+.login-form {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  text-align:left;
+}
+.login-form label {
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:-8px;
+}
+.login-form input {
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+  background:#d6d6d6;
+}
+.password-wrapper {
+  position:relative;
+}
+.password-wrapper input {
+  width:100%;
+  padding-right:32px;
+}
+.toggle-password {
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:14px;
+}
+.forgot {
+  font-size:13px;
+  color:white;
+  text-decoration:underline;
+  margin-top:-6px;
+}
+
+.btn.primary {
+  background:#4FC3F7;
+  color:black;
+  font-weight:700;
+  border:none;
+}
+.btn.secondary {
+  background:black;
+  color:white;
+  font-weight:700;
+  border:1px solid white;
+}
+.btn {
+  border-radius:10px;
+  padding:10px;
+  cursor:pointer;
+  margin-top:6px;
+  font-size:15px;
+  text-align:center;
+}
