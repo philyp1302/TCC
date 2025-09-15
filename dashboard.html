@@ -1,18 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem Estar - Painel</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Bem Estar</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="container dashboard-container">
-        <h1>Bem-vindo ao Painel!</h1>
-        <p>Esta é a sua área de usuário logado.</p>
-        <button id="logoutButton" class="logout-button">Sair</button>
+  <header class="topbar">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="stats">
+      <div class="stat"><img src="tenis.png" alt="" /><span>0 passos.</span></div>
+      <div class="stat"><img src="tempo.png" alt="" /><span>0 min.</span></div>
+      <div class="stat"><img src="fogo.png" alt="" /><span>0 kcal.</span></div>
+      <img src="cora.png" alt="coração" class="cora" />
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card big" id="horario">
+      <h1>Horário de aulas</h1>
+    </section>
+
+    <section class="card" id="ciclo">
+      <h2>Monitoramento do ciclo</h2>
+    </section>
+
+    <section class="card small" id="historico">
+      <img src="livro.png" alt="" />
+      <h3>Histórico de treinos</h3>
+    </section>
+
+    <section class="card small" id="alimentacao">
+      <img src="tenis.png" alt="" />
+      <h3>Alimentação</h3>
+    </section>
+
+    <div class="promo">
+      <span>Aulas e treinos <strong>exclusivos!</strong></span>
     </div>
 
-    <script src="script.js"></script>
+    <div class="plan">
+      <div class="plan-box">
+        <div class="plan-title">Plano</div>
+        <div class="price">Valor: <span>9,90</span></div>
+        <div class="note">Educadores de nossa empresa</div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div>local: CEP Júlio szymanski</div>
+      <div>Atendimento: 7:00 ás 22:10</div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
