@@ -116,15 +116,7 @@ body {
 
 .forgot-password {
   color: #fff;
-  font-size:
-.metrics-box {
-  background-color: #555;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-item 14px;
+  font-size: 14px;
 }
 
 /* Dashboard */
