@@ -1,47 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Login - Bem Estar</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Estar - Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="Logotipo Bem Estar" class="logo">
+        <img src="images/bem.estar.png" alt="Texto Bem Estar" class="bem-estar-text">
 
-  <div class="login-container">
-    <img src="bem.estar.png" alt="Bem Estar" class="bem-logo" />
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">ENTRAR</button>
+        </form>
+    </div>
 
-    <h2 class="title">BEM-ESTAR</h2>
-    <p class="subtitle">FAÇA SEU LOGIN!</p>
-
-    <form class="login-form" onsubmit="event.preventDefault(); window.location.href='index.html';">
-      <label for="usuario">Usuário</label>
-      <input type="text" id="usuario" placeholder="Digite seu usuário" required />
-
-      <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="Digite seu e-mail" required />
-
-      <label for="senha">Senha</label>
-      <div class="password-wrapper">
-        <input type="password" id="senha" placeholder="Digite sua senha" required />
-        <span class="toggle-password">👁</span>
-      </div>
-
-      <a href="#" class="forgot">Esqueci minha senha</a>
-
-      <button type="submit" class="btn primary">ENTRAR</button>
-      <button type="button" class="btn secondary">GOOGLE</button>
-    </form>
-  </div>
-
-  <script src="js/app.js"></script>
-  <script>
-    // mostrar/esconder senha
-    const toggle = document.querySelector('.toggle-password');
-    const senha = document.getElementById('senha');
-    toggle.addEventListener('click', () => {
-      senha.type = senha.type === 'password' ? 'text' : 'password';
-    });
-  </script>
-</body>
-</html>
