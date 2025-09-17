@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem Estar - Login</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Bem-Estar - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="images/logo.png" alt="bem.estar.png" class="logo">
-        <img src="images/bem.estar.png" alt="logo.png" class="bem-estar-text">
+  <div class="logo">
+    <img src="img/bem.estar.png" alt="Bem Estar" width="200">
+  </div>
 
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-button">ENTRAR</button>
-        </form>
-    </div>
+  <div class="container">
+    <h2>BEM-ESTAR</h2>
+    <p><b>FAÇA SEU LOGIN!</b></p>
+    
+    <form id="loginForm">
+      <input type="text" id="usuario" placeholder="Usuário" required><br>
+      <input type="email" id="email" placeholder="E-mail" required><br>
+      <input type="password" id="senha" placeholder="Senha" required><br>
+      <a href="#">Esqueci minha senha</a><br><br>
+      <button type="submit" class="btn btn-entrar">ENTRAR</button>
+    </form>
+    
+    <button class="btn btn-google">GOOGLE</button>
+  </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
