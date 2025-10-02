@@ -1,29 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Bem-Estar - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-Estar - Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="logo">
-    <img src="bem.estar.png" alt="Bem Estar" width="200">
-  </div>
+  <header>
+    <img src="assets/logo.png" alt="Logo Bem-Estar" class="logo">
+  </header>
 
-  <div class="container">
-    <h2>BEM-ESTAR</h2>
-    <p><b>FAÇA SEU LOGIN!</b></p>
-    
-    <form id="loginForm">
-      <input type="text" id="usuario" placeholder="Usuário" required><br>
-      <input type="email" id="email" placeholder="E-mail" required><br>
-      <input type="password" id="senha" placeholder="Senha" required><br>
-      <a href="#">Esqueci minha senha</a><br><br>
-      <button type="submit" class="btn btn-entrar">ENTRAR</button>
-    </form>
-    
-    <button class="btn btn-google">GOOGLE</button>
-  </div>
+  <main class="dashboard">
+    <section class="status">
+      <div>
+        <p>👣 0 passos</p>
+        <p>⏱ 0 min</p>
+        <p>🔥 0 kcal</p>
+      </div>
+      <div>
+        ❤️
+      </div>
+    </section>
+
+    <button onclick="location.href='horarios.html'">Horário de aulas</button>
+    <button>Monitoramento do ciclo</button>
+    <button>Histórico de treinos</button>
+    <button onclick="location.href='alimentacao.html'">Alimentação</button>
+
+    <div class="plano">
+      <h3>Plano</h3>
+      <p>Valor: <strong>R$ 9,90</strong></p>
+      <p>Educadores de nossa empresa</p>
+    </div>
+
+    <footer>
+      <p>Local: CEP Júlio Szymanski</p>
+      <p>Atendimento: 7:00 às 22:10</p>
+    </footer>
+  </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-Estar - Horários</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button class="voltar" onclick="history.back()">⬅</button>
+    <h2>Agenda</h2>
+    <img src="assets/logo.png" alt="Logo" class="logo">
+  </header>
+
+  <main class="agenda">
+    <div class="dia-semana">
+      <button onclick="trocarDia(-1)">⬅</button>
+      <h3 id="diaSemana">Segunda</h3>
+      <button onclick="trocarDia(1)">➡</button>
+    </div>
+
+    <ul class="lista-horarios" id="listaHorarios">
+      <!-- preenchido via JS -->
+    </ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-Estar - Alimentação</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <button class="voltar" onclick="history.back()">⬅</button>
+    <h2>Alimentação</h2>
+    <img src="assets/logo.png" alt="Logo" class="logo">
+  </header>
+
+  <main class="alimentacao">
+    <section class="meta">
+      <h3><span id="kcal-total">0</span> kcal</h3>
+      <p>Meta: 1746 kcal</p>
+      <progress value="0" max="2269"></progress>
+      <p>Intervalo de meta: 1571 - 1920 cal</p>
+    </section>
+
+    <section class="graficos">
+      <canvas id="graficoRecomendado"></canvas>
+      <canvas id="graficoReal"></canvas>
+    </section>
+
+    <section class="refeicoes">
+      <h3>Registrar refeição</h3>
+      <ul>
+        <li>☀ Café da manhã - <span>0 kcal</span></li>
+        <li>🍽 Almoço - <span>0 kcal</span></li>
+        <li>🌙 Jantar - <span>0 kcal</span></li>
+        <li>🥪 Lanche da manhã - <span>0 kcal</span></li>
+        <li>🍪 Lanche da tarde - <span>0 kcal</span></li>
+        <li>🥛 Lanche da noite - <span>0 kcal</span></li>
+      </ul>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>

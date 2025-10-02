@@ -104,3 +104,75 @@ img.icon {
   width: 25px;
   margin-right: 8px;
 }
+body {
+  font-family: Arial, sans-serif;
+  background: #2f2f2f;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+}
+
+.logo {
+  height: 40px;
+}
+
+button {
+  background: #666;
+  border: none;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  width: 90%;
+  cursor: pointer;
+}
+
+button.voltar {
+  background: none;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.status, .plano, .agenda, .alimentacao {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #3a3a3a;
+}
+
+.lista-horarios {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-horarios li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #555;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+}
+
+.refeicoes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.refeicoes li {
+  margin: 8px 0;
+  background: #555;
+  padding: 10px;
+  border-radius: 8px;
+}
