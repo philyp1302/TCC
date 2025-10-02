@@ -2,37 +2,42 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Bem-Estar - Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="topo">
-    <img src="logo.png" alt="Logo" width="120">
-  </div>
+<body class="dashboard-body">
+  <header class="dashboard-header">
+    <img src="logo.png" alt="Logo" class="dash-logo">
+  </header>
 
-  <div class="status">
-    <div>
-      <p><img src="tenis.png" class="icon"> 0 passos</p>
-      <p><img src="tempo.png" class="icon"> 0 min.</p>
-      <p><img src="fogo.png" class="icon"> 0 kcal</p>
+  <section class="metrics-box">
+    <div class="metrics-text">
+      <p>👟 0 passos.</p>
+      <p>⏱ 0 min.</p>
+      <p>🔥 0 kcal.</p>
     </div>
-    <img src="cora.png" alt="Coração" width="60">
-  </div>
+    <img src="cora.png" alt="Coração" class="heart-icon">
+  </section>
 
-  <div class="card">📅 Horário de aulas</div>
-  <div class="card">📊 Monitoramento do ciclo</div>
-  <div class="card"><img src="livro.png" class="icon"> Histórico de treinos</div>
-  <div class="card">🥗 Alimentação</div>
+  <section class="dash-section"><strong>Horário de aulas</strong></section>
+  <section class="dash-section">Monitoramento do ciclo</section>
+  <section class="dash-section">📜 Histórico de treinos</section>
+  <section class="dash-section">🥗 Alimentação</section>
 
-  <p><b>Aulas e treinos exclusivos!</b></p>
+  <section class="promo">
+    <span class="highlight">Aulas e treinos <strong>exclusivos!</strong></span>
+  </section>
 
-  <div class="plano">
-    <p><b>Plano</b><br>Valor: R$ 9,90<br><small>Educadores de nossa empresa</small></p>
-  </div>
+  <section class="plan-box">
+    <p><strong>Plano</strong></p>
+    <p>Valor: <strong>29,90</strong></p>
+    <span class="yellow">Educadores de nossa empresa</span>
+  </section>
 
-  <div class="footer">
-    local: CEP Júlio Szymanski <br>
+  <footer class="dashboard-footer">
+    local: CEP Júlio Szymanski<br>
     Atendimento: 7:00 às 22:10
-  </div>
+  </footer>
 </body>
 </html>
