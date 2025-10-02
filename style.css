@@ -1,106 +1,199 @@
+/* Login e geral */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #2e2e2e;
+  background-color: #333;
   color: white;
-  text-align: center;
-}
+  box-sizing: border-box;
 
-.logo {
-  margin-top: 30px;
+
+
 }
 
 .container {
-  background: #444;
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-input {
+.logo, .dash-logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.login-box {
+  background-color: #6b8e5c;
+  border-radius: 20px;
+  padding: 30px 20px;
   width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.bem-estar-text {
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.input-group input {
+  width: calc(100% - 30px);
+  padding: 12px 15px;
+  background-color: rgba(255,255,255,0.3);
   border: none;
+  border-radius: 10px;
+  color: white;
   font-size: 16px;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .btn {
-  display: block;
-  width: 90%;
-  padding: 12px;
-  margin: 10px auto;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-entrar {
-  background: #5ec5f5;
-  color: black;
-}
-
-.btn-google {
-  background: black;
-  color: white;
-}
-
-a {
-  font-size: 14px;
-  color: #ddd;
-}
-
-.topo {
-  padding: 20px;
-}
-
-.status {
-  background: #555;
-  margin: 10px auto;
+  width: 100%;
   padding: 15px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
+  border: none;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.primary-btn {
+  background-color: #87ceeb;
+  color: #ffffff;
+}
+
+.google-btn {
+  background-color: white;
+  color: #ffffff;
+}
+
+.feature-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+
+
+}
+
+.feature-icons img {
+  width: 50px;
+  height: 50px;
+
+
+
+
+
+
+
+
+
+}
+
+.forgot-password {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Dashboard */
+.dashboard-body {
+  background-color: #2f2f2f;
+  text-align: center;
+}
+
+.metrics-box {
+  background-color: #555;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.status div {
+.metrics-text {
   text-align: left;
 }
 
-.card {
-  background: #555;
-  margin: 10px auto;
+.heart-icon {
+  width: 50px;
+}
+
+.dash-section {
+  background-color: #666;
+  margin: 10px 20px;
   padding: 15px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: left;
-  font-size: 18px;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-.plano {
+.promo {
+  margin: 20px 0;
+}
+
+.highlight {
   background: black;
+  padding: 6px 15px;
+  border-radius: 10px;
   color: yellow;
+  font-weight: bold;
+}
+
+.plan-box {
+  background-color: black;
+  color: white;
   padding: 15px;
-  border-radius: 12px;
-  width: 200px;
-  margin: 20px auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 80%;
 }
 
-.footer {
-  margin-top: 20px;
+.plan-box .yellow {
+  color: yellow;
+  display: block;
+  margin-top: 5px;
+}
+
+.dashboard-footer {
   font-size: 14px;
-}
-
-img.icon {
-  width: 25px;
-  margin-right: 8px;
+  margin-top: 20px;
+  padding-bottom: 20px;
 }

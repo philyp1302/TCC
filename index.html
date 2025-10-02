@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bem-estar-Login</title>
+  <title>bem-estar-login</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="dashboard-body">
-  <header class="dashboard-header">
-    <img src="logo.png" alt="Logo" class="dash-logo">
-  </header>
+<body>
+  <div class="input-group">
+    <img src="logo.png" alt="bem-estar-Logo" class="logo">
+    <div class="login-box">
+      <img src="bem.estar.png" alt="bem-estar-login" class="bem-estar-text">
 
-  <section class="metrics-box">
-    <div class="metrics-text">
-      <p>👟 0 passos.</p>
-      <p>⏱ 0 min.</p>
-      <p>🔥 0 kcal.</p>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="usuario" name="usuario" espaço reservado=" ">
+          <label for="usuario">Nome</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" name="email" espaço reservado=" ">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-group">
+          <div class="alterar senha">
+            <input type="password" id="password" name="password" espaço reservado=" ">
+            <label for="password">senha</label>
+            <span class="alterar senha">&#128065;</span>
+          </div>
+        </div>
+
+        <botão type="submit" class="btn primary-btn">LOGIN</botão>
+        <botão type="botão" class="btn google-btn">GOOGLE</botão>
+      </form>
+
+      <a href="#" class="esqueci minha senha">esqueci minha senha</a>
+      </div>
     </div>
-    <img src="cora.png" alt="Coração" class="heart-icon">
-  </section>
+  </div>
 
-  <section class="dash-section"><strong>Horário de aulas</strong></section>
-  <section class="dash-section">Monitoramento do ciclo</section>
-  <section class="dash-section">📜 Histórico de treinos</section>
-  <section class="dash-section">🥗 Alimentação</section>
+  <head>
+    <meta charset="UTF-8">
+  <meta nome="viewport"
+  content="width=device-width,initial-scale=1.0">
+<title>login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+ <body>
+  <div class=conteiner >
+    <h2>login</h2>
+    <input type="text" placeholder="usuario"
+    id="usuario">
+    <input type="passaword"
+placeholder="senha" id="senha">
+<button onclick="fazerlogin"()>entrar</button>
+<div>
+ <script src="script.js"></script>
 
-  <section class="promo">
-    <span class="highlight">Aulas e treinos <strong>exclusivos!</strong></span>
-  </section>
+</body>
+<html>
 
-  <section class="plan-box">
-    <p><strong>Plano</strong></p>
-    <p>Valor: <strong>29,90</strong></p>
-    <span class="yellow">Educadores de nossa empresa</span>
-  </section>
-
-  <footer class="dashboard-footer">
-    local: CEP Júlio Szymanski<br>
-    Atendimento: 7:00 às 22:10
-  </footer>
+</body>
+  <script src="script.js"></script>
 </body>
 </html>
