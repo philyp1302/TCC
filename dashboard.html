@@ -1,59 +1,38 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dashboard - Bem Estar</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>Bem-Estar - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <div class="stats">
-      <div class="stat"><img src="tenis.png" alt="" /><span>0 passos.</span></div>
-      <div class="stat"><img src="tempo.png" alt="" /><span>0 min.</span></div>
-      <div class="stat"><img src="fogo.png" alt="" /><span>0 kcal.</span></div>
-      <img src="cora.png" alt="coração" class="cora" />
+  <div class="topo">
+    <img src="logo.png" alt="Logo" width="120">
+  </div>
+
+  <div class="status">
+    <div>
+      <p><img src="tenis.png" class="icon"> 0 passos</p>
+      <p><img src="tempo.png" class="icon"> 0 min.</p>
+      <p><img src="fogo.png" class="icon"> 0 kcal</p>
     </div>
-  </header>
+    <img src="cora.png" alt="Coração" width="60">
+  </div>
 
-  <main class="container">
-    <section class="card big" id="horario">
-      <h1>Horário de aulas</h1>
-    </section>
+  <div class="card">📅 Horário de aulas</div>
+  <div class="card">📊 Monitoramento do ciclo</div>
+  <div class="card"><img src="livro.png" class="icon"> Histórico de treinos</div>
+  <div class="card">🥗 Alimentação</div>
 
-    <section class="card" id="ciclo">
-      <h2>Monitoramento do ciclo</h2>
-    </section>
+  <p><b>Aulas e treinos exclusivos!</b></p>
 
-    <section class="card small" id="historico">
-      <img src="livro.png" alt="" />
-      <h3>Histórico de treinos</h3>
-    </section>
+  <div class="plano">
+    <p><b>Plano</b><br>Valor: R$ 9,90<br><small>Educadores de nossa empresa</small></p>
+  </div>
 
-    <section class="card small" id="alimentacao">
-      <img src="tenis.png" alt="" />
-      <h3>Alimentação</h3>
-    </section>
-
-    <div class="promo">
-      <span>Aulas e treinos <strong>exclusivos!</strong></span>
-    </div>
-
-    <div class="plan">
-      <div class="plan-box">
-        <div class="plan-title">Plano</div>
-        <div class="price">Valor: <span>9,90</span></div>
-        <div class="note">Educadores de nossa empresa</div>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div>local: CEP Júlio szymanski</div>
-      <div>Atendimento: 7:00 ás 22:10</div>
-    </footer>
-  </main>
-
-  <script src="js/app.js"></script>
+  <div class="footer">
+    local: CEP Júlio Szymanski <br>
+    Atendimento: 7:00 às 22:10
+  </div>
 </body>
 </html>
