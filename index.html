@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App - Simulação de Navegação</title>
+    <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo base para simular a interface de um app */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Fundo leve */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        /* Contêiner principal do app (simula a tela do celular) */
+        #app-container {
+            width: 100%;
+            max-width: 420px; /* Largura típica de celular */
+            height: 90vh;
+            max-height: 800px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Estilo para as páginas internas */
+        .page {
+            width: 100%;
+            height: 100%;
+            padding: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateX(100%);
+            overflow-y: auto; /* Permite scroll em páginas longas */
+        }
+
+        .page.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+
+        .header {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .btn-primary {
+            @apply w-full py-3 px-6 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-[1.01];
+        }
+
+        .btn-secondary {
+            @apply w-full py-4 px-6 bg-white text-indigo-600 font-semibold border-2 border-indigo-100 rounded-xl shadow-md hover:bg-indigo-50 transition duration-300 ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app-container">
+    
+    <!-- 
+        ============================================================
+        Página 1: INÍCIO (Ao clicar em ENTRAR, vai para CADASTRAR)
+        ============================================================
+    -->
+    <div id="page-1" class="page active">
+        <header class="header">
+            <h1 class="text-3xl font-extrabold text-gray-900">Bem-vindo ao <span class="text-indigo-600">FitLife</span></h1>
+            <p class="text-gray-500 mt-1">Seu parceiro de treino e saúde.</p>
+        </header>
+
+        <section class="mt-8 text-center">
+            <img src="https://placehold.co/350x200/4f46e5/ffffff?text=Treino+e+Foco" alt="Imagem motivacional de treino" class="w-full rounded-xl mb-8 shadow-md">
+            
+            <p class="text-lg text-gray-600 mb-10">Conecte-se e comece a monitorar seu progresso hoje!</p>
+
+            <button onclick="navigateTo('page-2')" class="btn-primary">
+                ENTRAR / INICIAR
+            </button>
+        </section>
+        
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 2: CADASTRO (Ao finalizar, vai para MENU PRINCIPAL)
+        ============================================================
+    -->
+    <div id="page-2" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Voltar
+        </button>
+
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Crie sua Conta</h2>
+            <p class="text-gray-500 mt-1">Preencha os dados abaixo para começar.</p>
+        </header>
+        
+        <form class="space-y-4">
+            <div>
+                <label for="nome" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                <input type="text" id="nome" class="mt-1 block w-full rounded-lg border-gray-300 border p-3 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                <input type="email" id="email" class="mt-1 block w-full rounded-lg border-gray-300 border p-3 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div>
+                <label for="senha" class="block text-sm font-medium text-gray-700">Senha</label>
+                <input type="password" id="senha" class="mt-1 block w-full rounded-lg border-gray-300 border p-3 focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <button type="button" onclick="navigateTo('page-3')" class="btn-primary mt-6">
+                CADASTRAR E ENTRAR
+            </button>
+        </form>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 3: MENU PRINCIPAL (HUB de Navegação)
+        ============================================================
+    -->
+    <div id="page-3" class="page">
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Menu Principal</h2>
+            <p class="text-gray-500 mt-1">Olá, [Nome do Usuário]! O que faremos hoje?</p>
+        </header>
+        
+        <div class="space-y-4">
+            <!-- Horários de Aulas -> Página 4 -->
+            <button onclick="navigateTo('page-4')" class="btn-secondary flex justify-between items-center">
+                <span>📅 Horários de Aulas</span>
+                <svg class="w-6 h-6 ml-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </button>
+
+            <!-- Monitoramento -> Página 5 -->
+            <button onclick="navigateTo('page-5')" class="btn-secondary flex justify-between items-center">
+                <span>📈 Monitoramento</span>
+                <svg class="w-6 h-6 ml-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            </button>
+            
+            <!-- Histórico de Treino -> Página 6 -->
+            <button onclick="navigateTo('page-6')" class="btn-secondary flex justify-between items-center">
+                <span>🏋️ Histórico de Treino</span>
+                <svg class="w-6 h-6 ml-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </button>
+            
+            <!-- Alimentação Regrada -> Página 7 -->
+            <button onclick="navigateTo('page-7')" class="btn-secondary flex justify-between items-center">
+                <span>🍎 Alimentação</span>
+                <svg class="w-6 h-6 ml-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2h-1a2 2 0 00-2 2v2m-2-2V9a2 2 0 00-2-2h1m6 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </button>
+            
+            <!-- Planos e Pagamento -> Página 8 -->
+            <button onclick="navigateTo('page-8')" class="btn-secondary flex justify-between items-center">
+                <span>💰 Planos e Pagamento</span>
+                <svg class="w-6 h-6 ml-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+            </button>
+
+            <!-- Botão de Sair -->
+            <button onclick="navigateTo('page-1')" class="mt-8 w-full py-3 text-red-600 font-semibold rounded-xl border border-red-200 hover:bg-red-50 transition duration-300">
+                Sair
+            </button>
+        </div>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 4: HORÁRIOS DE AULA
+        ============================================================
+    -->
+    <div id="page-4" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Voltar
+        </button>
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Horários de Aulas</h2>
+            <p class="text-gray-500 mt-1">Todas as turmas disponíveis na semana.</p>
+        </header>
+
+        <div class="space-y-4">
+            <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+                <p class="font-bold text-indigo-700">Segunda-feira</p>
+                <ul class="text-sm text-gray-700 mt-1 space-y-1">
+                    <li>07:00 - Yoga (Prof. Ana)</li>
+                    <li>18:30 - Crossfit (Prof. Beto)</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+                <p class="font-bold text-indigo-700">Terça-feira</p>
+                <ul class="text-sm text-gray-700 mt-1 space-y-1">
+                    <li>08:00 - Spinning (Prof. Carla)</li>
+                    <li>19:00 - Musculação Avançada (Prof. Dani)</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-indigo-50 rounded-xl border border-indigo-200">
+                <p class="font-bold text-indigo-700">Quarta-feira</p>
+                <ul class="text-sm text-gray-700 mt-1 space-y-1">
+                    <li>07:00 - Yoga (Prof. Ana)</li>
+                    <li>18:30 - Crossfit (Prof. Beto)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 5: MONITORAMENTO (Mês/Ano)
+        ============================================================
+    -->
+    <div id="page-5" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Voltar
+        </button>
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Monitoramento 2025</h2>
+            <p class="text-gray-500 mt-1">Acompanhe seu progresso mês a mês.</p>
+        </header>
+
+        <div class="grid grid-cols-3 gap-3">
+            <!-- Simulação dos 12 meses de 2025 -->
+            <div class="text-center p-3 bg-green-100 rounded-lg shadow-sm">
+                <p class="font-bold text-green-700">Jan</p>
+                <span class="text-xs text-gray-500">80%</span>
+            </div>
+            <div class="text-center p-3 bg-green-100 rounded-lg shadow-sm">
+                <p class="font-bold text-green-700">Fev</p>
+                <span class="text-xs text-gray-500">95%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-100 rounded-lg shadow-sm">
+                <p class="font-bold text-indigo-700">Mar</p>
+                <span class="text-xs text-gray-500">40%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Abr</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Mai</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Jun</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Jul</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Ago</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Set</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Out</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Nov</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+            <div class="text-center p-3 bg-indigo-50 rounded-lg shadow-sm">
+                <p class="font-bold text-gray-700">Dez</p>
+                <span class="text-xs text-gray-500">0%</span>
+            </div>
+        </div>
+        
+        <div class="mt-8 p-4 bg-white border border-gray-200 rounded-xl shadow-md">
+            <h3 class="font-bold text-lg text-gray-800">Métrica Principal</h3>
+            <p class="text-2xl text-indigo-600 font-extrabold mt-1">4.5 kg Perdidos</p>
+            <p class="text-sm text-gray-500">Meta: 8.0 kg</p>
+        </div>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 6: HISTÓRICO DE TREINO
+        ============================================================
+    -->
+    <div id="page-6" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Voltar
+        </button>
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Histórico de Treino</h2>
+            <p class="text-gray-500 mt-1">Seus treinos finalizados e desempenho.</p>
+        </header>
+
+        <div class="space-y-4">
+            <div class="p-4 bg-white rounded-xl shadow-md border border-green-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-lg text-green-700">Treino de Força A</p>
+                        <span class="text-xs text-gray-500">Duração: 65 min</span>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-600">22/Mar/2025</span>
+                </div>
+                <p class="text-sm text-gray-700 mt-2">Destaques: Recorde pessoal no Supino (80kg).</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-md border border-green-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-lg text-green-700">Cárdio Intenso</p>
+                        <span class="text-xs text-gray-500">Duração: 45 min</span>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-600">20/Mar/2025</span>
+                </div>
+                <p class="text-sm text-gray-700 mt-2">Destaques: 6km na esteira. Ritmo mantido.</p>
+            </div>
+            <div class="p-4 bg-white rounded-xl shadow-md border border-red-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-lg text-red-700">Treino de Força B</p>
+                        <span class="text-xs text-gray-500">Duração: 30 min (Incompleto)</span>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-600">18/Mar/2025</span>
+                </div>
+                <p class="text-sm text-gray-700 mt-2">Observação: Dor no ombro, tive que parar mais cedo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 7: ALIMENTAÇÃO REGRADA
+        ============================================================
+    -->
+    <div id="page-7" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Voltar
+        </button>
+        <header class="header">
+            <h2 class="text-3xl font-bold text-gray-900">Alimentação Regrada</h2>
+            <p class="text-gray-500 mt-1">Seu plano nutricional e sugestões de refeições.</p>
+        </header>
+
+        <div class="space-y-4">
+            <h3 class="text-xl font-bold text-indigo-600">Plano Diário (Cutting)</h3>
+            
+            <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-200">
+                <p class="font-bold text-gray-800">Café da Manhã (7:00)</p>
+                <ul class="list-disc list-inside text-sm text-gray-700 mt-1">
+                    <li>3 ovos mexidos</li>
+                    <li>1 fatia de pão integral</li>
+                    <li>Café preto sem açúcar</li>
+                </ul>
+            </div>
+            
+            <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-200">
+                <p class="font-bold text-gray-800">Almoço (12:30)</p>
+                <ul class="list-disc list-inside text-sm text-gray-700 mt-1">
+                    <li>150g de peito de frango grelhado</li>
+                    <li>Arroz integral (4 colheres)</li>
+                    <li>Salada mista à vontade</li>
+                </ul>
+            </div>
+            
+            <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-200">
+                <p class="font-bold text-gray-800">Jantar (19:00)</p>
+                <ul class="list-disc list-inside text-sm text-gray-700 mt-1">
+                    <li>1 posta de salmão assado</li>
+                    <li>Aspargos cozidos</li>
+                </ul>
+            </div>
+
+            <p class="text-center text-xs text-gray-400 mt-6">Consulte sempre um nutricionista antes de iniciar qualquer dieta.</p>
+        </div>
+    </div>
+
+    <!-- 
+        ============================================================
+        Página 8: PLANOS E PAGAMENTO
+        ============================================================
+    -->
+    <div id="page-8" class="page">
+        <button onclick="goBack()" class="flex items-center text-indigo-600 mb-6 font-semibold">
+            <svg class="w-5 h-5 mr-1"
